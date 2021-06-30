@@ -8,15 +8,15 @@ function Filter() {
                 <p>Filter products by category:</p>
                 <div className="filter-group">
                     <div className="filter-group__item">
-                        <label htmlFor="">Item</label>
+                        <label htmlFor="">Sneakers</label>
                         <input type="radio" name="category" id="" />
                     </div>
                     <div className="filter-group__item">
-                        <label htmlFor="">Item</label>
+                        <label htmlFor="">Jackets</label>
                         <input type="radio" name="category" id="" />
                     </div>
                     <div className="filter-group__item">
-                        <label htmlFor="">Item</label>
+                        <label htmlFor="">Shades</label>
                         <input type="radio" name="category" id="" />
                     </div>
                 </div>
