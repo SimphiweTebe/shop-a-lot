@@ -4,6 +4,8 @@ import { getShopList } from '../redux/actions/storeActions';
 import _ from 'underscore';
 import { Link } from 'react-router-dom';
 import LoadSpinner from '../components/LoadSpinner';
+import Banner from '../components/Banner';
+import Filter from '../components/Filter';
 
 function Shop() {
     const dispatch = useDispatch();
@@ -11,6 +13,7 @@ function Shop() {
 
     React.useEffect(()=> {
         dispatch(getShopList())
+        window.scrollTo(0,0)
     },[dispatch])
 
     const renderStore = ()=> {
@@ -29,7 +32,10 @@ function Shop() {
         }
         if(!_.isEmpty(shopFront.items)){
             return (
+                <>
+                <Filter />
                 <section className="store-front">
+                    
                     {
                         shopFront.items.map(item => (
                             <Link to={`/product/${item.id}`} className="item" key={item.id}>
@@ -44,12 +50,14 @@ function Shop() {
                         ))
                     }
                 </section>
+                </>
             )
         }
     }
 
     return (
         <main className="page">
+            <Banner title="Shop All" />
             {
                 renderStore()
             }

@@ -36,6 +36,12 @@
             background: #afafaf;
             text-transform: uppercase;
             font-weight: 400;
+            cursor: pointer;
+
+            &:hover{
+                background: darken(#afafaf, 40);
+                color: #afafaf;
+            }
         }
     }
 }

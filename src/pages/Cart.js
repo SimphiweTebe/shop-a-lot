@@ -4,12 +4,15 @@ import { useSelector } from 'react-redux'
 function Cart() {
 
     const cartState = useSelector(state => state.cart.cartList)
-    console.log(cartState)
+    
+    React.useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
 
     return (
         <section className="cart-page">
             {
-                cartState.length > 0 ? <h1>You have {cartState.length} item(s) in your basket</h1> : <h1>Your basket is empty.</h1>
+                cartState.length > 0 ? <h1>You have {cartState.length} item(s) in your basket</h1> : <h1>Your basket is currently empty.</h1>
             }
             <div className="cart-grid">
                 {

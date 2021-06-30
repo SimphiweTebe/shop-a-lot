@@ -52,6 +52,9 @@ function index() {
                     </li>
                 </ul>
             </div>
+            <div className="copyright">
+                <p>&copy; {new Date().getFullYear()} The Drip Store. All rights reserved.</p>
+            </div>
         </footer>
     )
 }
