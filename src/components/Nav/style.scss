@@ -1,0 +1,147 @@
+@import '../../sass/variables.scss';
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.4);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 70px;
+    z-index: 201;
+    
+
+    #menu-toggle{
+        position: absolute;
+        top: 2.5rem;
+        right: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.8rem;
+        z-index: 202;
+        color: #fff;
+        
+    }
+    &__menu{
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+        transform: translate(-100vw, 15rem);
+        transition: all .3s ease-in-out;
+        z-index: 200;
+
+        a{
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1.7rem;
+        }
+    }
+    &__menu--open{
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+        height: 60vh;
+        transform: translate(0, 15rem);
+        transition: all .3s ease-in-out;
+        z-index: 200;
+
+        a{
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 4rem;
+        }
+    }
+    &__actions{
+        display: flex;
+        position: fixed;
+        bottom: 2rem;
+        left: -100vw;
+        width: 100%;
+        gap: 2rem;
+    }
+    &__actions--open{
+        display: flex;
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        width: 100%;
+        gap: 2rem;
+
+        .cart{
+            position: relative;
+            width: 3rem;
+
+            span{
+                position: absolute;
+                top: -1rem;
+                left: -.8rem;
+                background: red;
+                padding: .3rem;
+                font-size: 1rem;
+                border-radius: 3rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 720px){
+
+        flex-direction: row;
+        align-items: center;
+        
+        #menu-toggle{
+            display: none;
+        }
+        &__menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 70%;
+            gap: 2rem;
+            padding: 0 2rem;
+            transform: translate(0, 0);
+
+            a{
+                font-size: 1.4rem;
+                padding: 1rem 2rem;
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+        }
+        &__actions{
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            
+            .cart{
+                position: relative;
+                cursor: pointer;
+
+                span{
+                    position: absolute;
+                    font-size: 1.2rem;
+                    top: -1.5rem;
+                    left: -1.5rem;
+                    background-color: red;
+                    padding: .2rem .6rem;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.75);
+    width: 100%;
+    height: 100vh;
+    z-index: 190;
+}

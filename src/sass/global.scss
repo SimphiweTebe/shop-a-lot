@@ -1,0 +1,191 @@
+@import './variables.scss';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+}
+.page{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    // margin-top: 90px;
+}
+.store-front{
+    position: relative;
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+    .item{
+        position: inherit;
+        width: 100%;
+        padding-bottom: 2rem;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        color: $black;
+
+        &-image{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border: 1px solid $grey;
+            padding: 2rem 0; 
+
+            img{
+                object-fit: contain;
+                display: block;
+                height: 18rem;
+                max-width: 24rem;
+            }
+        }
+        &-info{
+            margin-top: 1rem;
+
+            .price{
+                color: darken($grey, 20);
+                margin-top: .5rem;
+            }
+        }
+    }
+}
+.sub-title{
+    position: relative;
+    width: 90%;
+    max-width: 120rem;
+    margin: 3rem auto;
+}
+.product{
+    position: relative;
+    margin: 12rem auto 4rem;
+    width: 90%;
+    max-width: 100rem;
+    display: flex;
+    min-height: 60vh;
+    flex-direction: column;
+
+    &-image{
+        position: relative;
+        width: 100%;
+        margin-bottom: 3rem;
+
+        img{
+            display: block;
+            width: 100%;
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+    }
+
+    &-details{
+        position: relative;
+        width: 100%;
+
+        .title{
+            margin-bottom: 1.5rem;
+        }
+        .price{
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            color: $grey;
+        }
+        .description{
+            margin-bottom: 3rem;
+        }
+        .category{
+            margin-bottom: 4rem;
+            color: $grey;
+            font-size: 1.3rem;
+        }
+        .add-to-cart{
+            display: inline-block;
+            border: none;
+            background-color: $black;
+            color: #fff;
+            padding: 1rem 4rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (min-width: 720px) {
+        flex-direction: row;
+        gap: 5rem;
+
+        &-image{
+            width: 35%;
+        }
+        &-details{
+            width: 75%;
+        }
+    }
+}
+.footer{
+    position: relative;
+    background-color: $black;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem 0;
+    margin-top: 3rem;
+
+    &-menu{
+        margin-top: 5rem;
+        width: 100%;
+    }
+
+    .container{
+        position: relative;
+        width: 90%;
+        max-width: 120rem;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: column;
+    }
+    li{
+        margin-bottom: 1.5rem;
+    }
+
+    a{
+        color: #fff;
+        font-size: 1.4rem;
+    }
+
+    @media screen and (min-width: 720px){
+        
+        .container{
+            flex-direction: row;
+        }
+        &-menu{
+            margin-top: 0rem;
+            width: 15rem;
+        }
+    }
+
+}
+.cart-page{
+    position: relative;
+    width: 90%;
+    max-width: 120rem;
+    margin: 12rem auto 6rem;
+    min-height: 70vh;
+}

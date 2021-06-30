@@ -1,0 +1,38 @@
+.hero{
+    position: relative;
+    width: 100%;
+
+    &-slide{
+        height: 40rem;
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+
+        &-controls{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .hero-title {
+        width: 100%;
+        max-width: 120rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+
+
+    @media screen and(min-width: 920px){
+        &-slide{
+            height: 55rem;
+        }
+    }
+}

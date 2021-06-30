@@ -1,0 +1,32 @@
+.signup{
+    position: relative;
+    width: 100%;
+    max-width: 120rem;
+    background-color: black;
+    padding: 2.5rem 2rem 4rem;
+    margin: 6rem auto 3rem;
+    color: #fff;
+    text-align: center;
+
+    h4{
+        margin-bottom: 2.5rem;
+        font-size: 2.6rem;
+        font-weight: 400;
+    }
+
+    &-container{
+        width: 99%;
+        max-width: 90rem;
+        margin: 0 auto;
+
+        input{
+            padding: 1rem;
+        }
+        input[type="email"]{
+            width: 80%;
+        }
+        input[type="submit"]{
+            width: 20%;
+        }
+    }
+}
