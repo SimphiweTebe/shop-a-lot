@@ -72,7 +72,8 @@ body{
     position: relative;
     width: 90%;
     max-width: 120rem;
-    margin: 3rem auto;
+    margin: 4rem auto;
+    text-transform: uppercase;
 }
 .product{
     position: relative;
@@ -149,7 +150,7 @@ body{
     margin-top: 3rem;
 
     &-menu{
-        margin-top: 5rem;
+        margin-top: 3rem;
         width: 100%;
     }
 
@@ -161,7 +162,7 @@ body{
         display: flex;
         flex-direction: column;
     }
-    li{
+    li.footer-menu-item{
         margin-bottom: 1.5rem;
     }
 
@@ -169,16 +170,58 @@ body{
         color: #fff;
         font-size: 1.4rem;
     }
+    &-social{
+        flex: 3;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 3rem;
+        
+        &-header{
+            width: 100%;
+            text-align: left;
+            height: 4rem;
+        }
+
+        &-item{
+            transform: translate(0,0);
+
+            a{
+                font-size: 2rem;
+            }
+        }
+    }
 
     @media screen and (min-width: 720px){
         
         .container{
             flex-direction: row;
         }
+
         &-menu{
             margin-top: 0rem;
             width: 15rem;
         }
+
+        &-social{
+            margin-top: 0;
+            justify-content: flex-end;
+            gap: 2rem;
+
+            &-header{
+                text-align: right;
+            }
+
+            &-item{
+                transform: translate(0,-5rem);
+
+                a{
+                    font-size: 2rem;
+                }
+            }
+        }
+        
     }
 
 }
