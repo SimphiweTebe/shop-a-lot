@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom'
-import {FaShoppingCart, FaSearch} from 'react-icons/fa';
-import {GiHamburgerMenu} from 'react-icons/gi'
+import {FaSearch} from 'react-icons/fa';
+import {GiHamburgerMenu, GiShoppingBag} from 'react-icons/gi'
 import './style.scss'
 import { useSelector } from 'react-redux';
 
@@ -12,20 +12,27 @@ function Nav() {
     const showCart = isOpen ? "nav__actions--open" : "nav__actions"
     const history = useHistory();
 
+    const handleNav = () => {
+        setOpen(false)
+        window.scrollTo(0,0)
+    }
+
     return (
         <>
         <nav className="nav">
             <button id="menu-toggle"  onClick={()=> setOpen(!isOpen)}><GiHamburgerMenu /></button>
             <div className={showMenu}>
-                <Link to="/" onClick={()=> setOpen(false)}>Home</Link>
-                <Link to="/shop" onClick={()=> setOpen(false)}>Shop</Link>
-                <Link to="/" onClick={()=> setOpen(false)}>About</Link>
-                <Link to="/" onClick={()=> setOpen(false)}>Contact</Link>
+                <Link to="/" onClick={handleNav}>Home</Link>
+                <Link to="/shop" onClick={handleNav}>Shop</Link>
+                <Link to="/" onClick={handleNav}>About</Link>
+                <Link to="/" onClick={handleNav}>Contact</Link>
             </div>
             <div className={showCart}>
                 <div className="cart">
-                    <span>{cartItems.length}</span>
-                    <FaShoppingCart onClick={()=> history.push('/cart')} />
+                    {
+                        cartItems.length > 0 ? <span>{cartItems.length}</span> : ''
+                    }
+                    <GiShoppingBag onClick={()=> history.push('/cart')} />
                 </div>
                 <div className="search">
                     <FaSearch />

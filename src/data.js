@@ -1,29 +1,29 @@
-import slide1 from './images/slides/carousel-2.jpeg';
-import slide2 from './images/slides/carousel-3.jpeg';
-import slide3 from './images/slides/carousel-1.jpeg';
+import slide1 from './images/slides/slide-2.jpg';
+import slide2 from './images/slides/slide-3.jpg';
+import slide3 from './images/slides/slide-1.jpg';
 
 export const slides = [
     {
         id: 0,
-        title: 'From bottles to Fashion',
-        subtext: 'Find all kiddies collection in here.',
-        cta: 'View Now',
-        link: '/shop',
-        img: slide1
-    },
-    {
-        id: 1,
-        title: 'Make it Reign',
-        subtext: 'Sneaker collection',
+        title: 'Everythin is game',
+        subtext: 'The sneaker collection under 2k',
         cta: 'Shop Now',
         link: '/shop',
         img: slide2
     },
     {
+        id: 1,
+        title: 'Make it Reign',
+        subtext: 'Stay dripped out in the cold',
+        cta: 'Shop Now',
+        link: '/shop',
+        img: slide1
+    },
+    {
         id: 2,
-        title: 'Win a trip for Three',
+        title: 'Snap to WIN',
         subtext: 'Check competition page for more details.',
-        cta: 'View Now',
+        cta: 'More Details',
         link: '/shop',
         img: slide3
     }

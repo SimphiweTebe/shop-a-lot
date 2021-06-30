@@ -35,9 +35,9 @@ function Hero() {
 
     React.useEffect(()=> {
         gsap.from([subtextEL, actionEL], {
-            duration: 1,
+            duration: .8,
             opacity: 0,
-            height: 20,
+            height: 60,
             transformOrigin: 'bottom',
             ease: 'power3.inOut',
             stagger: {
@@ -52,7 +52,9 @@ function Hero() {
                 <div className="hero-slide__title">
                 <h4>{`${slides[slideIndex.count].title}`}</h4>
                     <p ref={(el) =>{subtextEL = el}}>{`${slides[slideIndex.count].subtext}`}</p>
-                    <Link to="/shop" className="hero-slide__cta" ref={(el) =>{actionEL = el}}>Shop now</Link>
+                    <Link to="/shop" className="hero-slide__cta" ref={(el) =>{actionEL = el}}>
+                        {`${slides[slideIndex.count].cta}`}
+                    </Link>
                 </div>
                 <div className="hero-slide__controls">
                     <button className="prev" onClick={()=> handlePrev()}><FaAngleLeft /></button>

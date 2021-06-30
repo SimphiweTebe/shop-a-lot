@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {FaFacebookSquare, FaTwitterSquare, FaInstagramSquare} from 'react-icons/fa'
 
 function index() {
     return (
@@ -30,6 +31,29 @@ function index() {
                     <Link to="/">Terms and Conditions</Link>
                     </li>
                 </ul>
+                <ul className="footer-social">
+                    <li className="footer-social-header">
+                       <h4>Follow us</h4>
+                    </li>
+                    <li className="footer-social-item">
+                        <Link to="/">
+                            <FaFacebookSquare />
+                        </Link>
+                    </li>
+                    <li className="footer-social-item">
+                        <Link to="/">
+                            <FaTwitterSquare />
+                        </Link>
+                    </li>
+                    <li className="footer-social-item">
+                        <Link to="/">
+                            <FaInstagramSquare />
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+            <div className="copyright">
+                <p>&copy; {new Date().getFullYear()} The Drip Store. All rights reserved.</p>
             </div>
         </footer>
     )

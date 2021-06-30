@@ -1,10 +1,10 @@
 .signup{
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 120rem;
     background-color: black;
     padding: 2.5rem 2rem 4rem;
-    margin: 6rem auto 3rem;
+    margin: 3rem auto 5rem;
     color: #fff;
     text-align: center;
 
@@ -12,11 +12,13 @@
         margin-bottom: 2.5rem;
         font-size: 2.6rem;
         font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     &-container{
         width: 99%;
-        max-width: 90rem;
+        max-width: 80rem;
         margin: 0 auto;
 
         input{
@@ -24,9 +26,22 @@
         }
         input[type="email"]{
             width: 80%;
+            outline: none;
+            border: none;
         }
         input[type="submit"]{
             width: 20%;
+            outline: none;
+            border: none;
+            background: #afafaf;
+            text-transform: uppercase;
+            font-weight: 400;
+            cursor: pointer;
+
+            &:hover{
+                background: darken(#afafaf, 40);
+                color: #afafaf;
+            }
         }
     }
 }

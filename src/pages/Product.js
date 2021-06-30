@@ -14,6 +14,7 @@ function Product(props) {
 
     React.useEffect(()=>{
         getProduct(productId)
+        window.scrollTo(0,0)
     },[])
 
     const getProduct = async (id) => {
@@ -52,7 +53,7 @@ function Product(props) {
                         <h3 className="title">{product.title}</h3>
                         <h4 className="price">${product.price}</h4>
                         <p className="description">{product.description}</p>
-                        <button className="add-to-cart" onClick={addProduct}>Add to cart</button>
+                        <button className="add-to-cart" onClick={addProduct}>Add to basket</button>
                     </div>
                 </section>
             )

@@ -1,4 +1,4 @@
-# Shop-a-lot Eccomerce
+# Drip Ecommerce
 
 ## Project Techstack:
 
