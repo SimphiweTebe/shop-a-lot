@@ -8,31 +8,69 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
 
-
-        &-controls{
+        &__controls{
             position: absolute;
             left: 0;
             top: 50%;
+            transform: translate(0,-50%);
             width: 100%;
             display: flex;
             justify-content: space-between;
+
+            button{
+                background-color: rgba(0,0,0,.6);
+                border: none;
+                font-size: 3rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                padding: 2.5rem 1rem;
+                cursor: pointer;
+            }
+        }
+
+        &__title {
+            width: 100%;
+            max-width: 120rem;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            
+            h4{
+                font-size: 2rem;
+                text-transform: uppercase;
+                text-shadow: 1px 3px 5px rgba(0,0,0,.6);
+            }
+            p{
+                text-shadow: 1px 2px 3px rgba(0,0,0,.6);
+            }
+        }
+
+        &__cta{
+            position: relative;
+            padding: 1rem 2rem;
+            background: #000;
+            max-width: 20rem;
+            color: #fff;
+            margin-top: 2rem;
         }
     }
-    .hero-title {
-        width: 100%;
-        max-width: 120rem;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-
-
 
     @media screen and(min-width: 920px){
         &-slide{
             height: 55rem;
+
+            &__title{
+                h4{
+                    font-size: 3.5rem;
+                }
+            }
         }
     }
 }
