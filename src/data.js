@@ -22,7 +22,7 @@ export const slides = [
     {
         id: 2,
         title: 'Snap to WIN',
-        subtext: 'Check competition page for more details.',
+        subtext: 'Check competition page.',
         cta: 'More Details',
         link: '/shop',
         img: slide3

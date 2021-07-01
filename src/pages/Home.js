@@ -24,7 +24,7 @@ function Home() {
         if(shopFront.error){
             return (
                 <div className="error">
-                    <h3>{shopFront.error}</h3>
+                    <h3>{shopFront.error.message}</h3>
                 </div>
             )
         }

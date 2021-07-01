@@ -247,3 +247,19 @@ body{
     margin: 12rem auto 6rem;
     min-height: 70vh;
 }
+.cart-grid{
+    position: relative;
+    width: 100%;
+    max-width: 80rem;
+    margin-top: 4rem;
+    
+    &__item{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-top: 2rem;
+        border: 1px solid lighten($grey, 20);
+        padding: 1rem 2rem;
+    }
+}
