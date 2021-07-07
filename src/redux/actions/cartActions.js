@@ -13,3 +13,10 @@ export const removeCart = (id) => {
          payload: id
      }
  }
+
+ export const adjustCartQTY = (id) => {
+    return {
+         type: ACTION.REMOVE_FROM_CART,
+         payload: id
+     }
+ }

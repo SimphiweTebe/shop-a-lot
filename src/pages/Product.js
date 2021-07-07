@@ -1,9 +1,15 @@
 import React from 'react'
 import _ from 'underscore'
-import axios from 'axios'
+import { createClient } from 'contentful'
 import LoadSpinner from '../components/LoadSpinner'
+
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/actions/cartActions'
+
+const store = createClient({
+    space: 'xqdklds0mr1n',
+    accessToken: process.env.REACT_APP_CONTENTFUL_KEY
+})
 
 function Product(props) {
     const productId = props.match.params.id
@@ -17,11 +23,11 @@ function Product(props) {
         window.scrollTo(0,0)
     },[])
 
-    const getProduct = async (id) => {
+    const getProduct = async () => {
         try{
             setLoading(true)
-            const res = await axios.get(`https://fakestoreapi.com/products/${id}`)
-            setProduct(res.data)
+            const res = await store.getEntry(productId)
+            setProduct(res)
             setLoading(false)
         }catch(error){
             setError(error.message)
@@ -47,12 +53,12 @@ function Product(props) {
             return (
                 <section className="product">
                     <div className="product-image">
-                        <img src={product.image} alt={product.title} />
+                        <img src={product.fields.productThumbnail.fields.file.url} alt={product.title} />
                     </div>
                     <div className="product-details">
-                        <h3 className="title">{product.title}</h3>
-                        <h4 className="price">${product.price}</h4>
-                        <p className="description">{product.description}</p>
+                        <h3 className="title">{product.fields.title}</h3>
+                        <h4 className="price">R{product.fields.price}</h4>
+                        <p className="description">{product.fields.description}</p>
                         <button className="add-to-cart" onClick={addProduct}>Add to basket</button>
                     </div>
                 </section>

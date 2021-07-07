@@ -17,7 +17,7 @@
     }
 
     &-container{
-        width: 99%;
+        width: 90%;
         max-width: 80rem;
         margin: 0 auto;
 
@@ -25,12 +25,13 @@
             padding: 1rem;
         }
         input[type="email"]{
-            width: 80%;
+            width: 90%;
             outline: none;
             border: none;
         }
-        input[type="submit"]{
-            width: 20%;
+        input[type="submit"] {
+            width: 90%;
+            margin-top: 1rem;
             outline: none;
             border: none;
             background: #afafaf;
@@ -42,6 +43,16 @@
                 background: darken(#afafaf, 40);
                 color: #afafaf;
             }
+        }
+    }
+    @media screen and (min-width: 720px){
+
+        input[type="email"]{
+            width: 80%;
+        }
+        input[type="submit"]{
+            width: 20%;
+            margin-top: 0rem; 
         }
     }
 }
