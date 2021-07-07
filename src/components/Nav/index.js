@@ -36,11 +36,11 @@ function Nav() {
                 <Link to="/" onClick={handleNav}>Contact</Link>
             </div>
             <div className={showCart}>
-                <div className="cart">
+                <div className="cart" onClick={()=> history.push('/cart')} >
                     {
                         count > 0 ? <span>{count}</span> : ''
                     }
-                    <GiShoppingBag onClick={()=> history.push('/cart')} />
+                    <GiShoppingBag />
                 </div>
                 <div className="search">
                     <FaSearch />

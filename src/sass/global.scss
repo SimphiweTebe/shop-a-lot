@@ -246,6 +246,10 @@ body{
     max-width: 120rem;
     margin: 12rem auto 6rem;
     min-height: 70vh;
+
+    &__title{
+        font-size: 2.5rem;
+    }
 }
 .cart-grid{
     position: relative;
@@ -256,10 +260,81 @@ body{
     &__item{
         position: relative;
         display: flex;
-        align-items: center;
         gap: 3rem;
         margin-top: 2rem;
         border: 1px solid lighten($grey, 20);
-        padding: 1rem 2rem;
+        padding: 2.5rem 2rem;
+        min-height: 20rem;
+
+        .image{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15rem;
+        }
+
+        .cart-title{
+            position: relative;
+            width: 75%;
+
+            .title{
+                text-transform: uppercase;
+                margin-bottom: 4rem;
+            }
+        }
+        .cart-event{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            
+
+            &__qty{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                
+
+                span{
+                    padding: 0 1.2rem;
+                    border: 1px solid lighten($grey, 20);
+                    height: 3.5rem;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .qty{
+                    font-size: 2rem;
+                    cursor: pointer;
+                    background: $black;
+                    border: 1px solid $black;
+                    color: #fff;
+                    height: 3.5rem;
+                    width: 3.5rem;
+                }
+            }
+
+            &__price {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                min-width: 90px;
+            }
+
+            &__delete{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                font-size: 2.5rem;
+                cursor: pointer;
+            }
+        }
+        .cart-remove{
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
     }
 }

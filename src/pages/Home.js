@@ -13,7 +13,7 @@ function Home() {
 
     React.useEffect(()=> {
         dispatch(getFeatured())
-    },[])
+    },[dispatch])
 
     const renderStore = ()=> {
         if(shopFront.loading){
@@ -35,13 +35,13 @@ function Home() {
                 <section className="store-front">
                     {
                         shopFront.items.map(item => (
-                            <Link to={`/product/${item.id}`} className="item" key={item.id}>
+                            <Link className="item" key={item.sys.id} to={`/product/${item.sys.id}`}>
                                 <div className="item-image" >
-                                    <img src={item.image} alt={item.title} />
+                                    <img src={item.fields.productThumbnail.fields.file.url} alt={item.fields.title} />
                                 </div>
                                 <div className="item-info">
-                                    <h4>{item.title.length > 25 ? item.title.slice(0,30) + '...' : item.title}</h4>
-                                    <h4 className="price">${item.price}</h4>
+                                    <h4>{item.fields.title.length > 25 ? item.fields.title.slice(0,30) + '...' : item.fields.title}</h4>
+                                    <h4 className="price">R{item.fields.price}</h4>
                                 </div>
                             </Link>
                         ))

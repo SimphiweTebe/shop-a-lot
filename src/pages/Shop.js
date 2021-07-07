@@ -9,7 +9,7 @@ import Filter from '../components/Filter';
 
 function Shop() {
     const dispatch = useDispatch();
-    const shopFront = useSelector(state => state.storeList)
+    const shopFront = useSelector(state => state.storeList.items)
 
     React.useEffect(()=> {
         dispatch(getShopList())
@@ -30,25 +30,26 @@ function Shop() {
                 </div>
             )
         }
-        if(!_.isEmpty(shopFront.items)){
+        if(!_.isEmpty(shopFront)){
             return (
                 <>
                 <Filter />
                 <section className="store-front">
                     
                     {
-                        shopFront.items.map(item => (
-                            <Link to={`/product/${item.id}`} className="item" key={item.id}>
+                        shopFront.map(item => (
+                            <Link to={`/product/${item.sys.id}`} className="item" key={item.sys.id}>
                                 <div className="item-image" >
-                                    <img src={item.image} alt={item.title} />
+                                    <img src={item.fields.productThumbnail.fields.file.url} alt={item.title} />
                                 </div>
                                 <div className="item-info">
-                                    <h4>{item.title.length > 25 ? item.title.slice(0,30) + '...' : item.title}</h4>
-                                    <h4 className="price">${item.price}</h4>
+                                    <h4>{item.fields.title}</h4>
+                                    <h4 className="price">R{item.fields.price}</h4>
                                 </div>
                             </Link>
                         ))
                     }
+                    
                 </section>
                 </>
             )

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeCart } from '../redux/actions/cartActions'
+import { FaWindowClose } from 'react-icons/fa'
 
 function Cart() {
 
@@ -16,24 +17,32 @@ function Cart() {
         SetCount(count)
     },[cartState])
 
+    console.log(cartState);
+
     return (
         <section className="cart-page">
-            {
-                count > 0 ? <h1>You have {count} item<small>(s)</small> in your basket</h1> : <h1>Your basket is currently empty.</h1>
-            }
+            <h1 className="cart-page__title">Shopping Cart</h1>
             <div className="cart-grid">
                 {
                     cartState.map(item => (
-                        <div className="cart-grid__item" key={item.id}>
+                        <div className="cart-grid__item" key={item.sys.id}>
                             <div className="image">
-                                <img src={item.image} alt={item.title} width="120" />
+                                <img src={item.fields.productThumbnail.fields.file.url} alt={item.title} width="120" />
                             </div>
                             <div className="cart-title">
-                                <h4>{item.title}</h4>
+                                <h4 className="title">{item.fields.title}</h4>
                                 <div className="cart-event">
-                                    <h5>Quantity: {item.qty}</h5>
-                                    <h5>Price: ${`${item.price * item.qty}`}</h5>
-                                    <button className="cart-remove" onClick={()=> dispatch(removeCart(item.id))}>Remove Item</button>
+                                    <div className="cart-event__qty">
+                                        <button className="qty">-</button>
+                                        <span>{item.qty}</span>
+                                        <button className="qty">+</button>
+                                    </div>
+                                    <div className="cart-event__price">
+                                        <span>Price:</span><strong>R{`${item.fields.price * item.qty}`}</strong> 
+                                    </div>
+                                    <div className="cart-event__delete" onClick={()=> dispatch(removeCart(item.sys.id))}>
+                                        <FaWindowClose />
+                                    </div>
                                 </div>
                             </div>
                         </div>

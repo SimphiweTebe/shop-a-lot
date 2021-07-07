@@ -5,7 +5,7 @@ import slide3 from './images/slides/slide-1.jpg';
 export const slides = [
     {
         id: 0,
-        title: 'Everythin is game',
+        title: 'Everything is game',
         subtext: 'The sneaker collection under 2k',
         cta: 'Shop Now',
         link: '/shop',

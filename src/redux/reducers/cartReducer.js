@@ -10,11 +10,11 @@ const cartReducer = (state = initialState, action) => {
 
         case ACTION.ADD_TO_CART:
             
-            const inCart = state.cartList.find(item => item.id === action.payload.id ? true : false)
+            const inCart = state.cartList.find(item => item.sys.id === action.payload.sys.id ? true : false)
             
             return {
                 ...state,
-                cartList: inCart ? state.cartList.map(item => item.id === action.payload.id ? {...item, qty: item.qty + 1} : item)
+                cartList: inCart ? state.cartList.map(item => item.sys.id === action.payload.sys.id ? {...item, qty: item.qty + 1} : item)
                 : [...state.cartList, {...action.payload, qty: 1}]
             }
 
@@ -24,7 +24,7 @@ const cartReducer = (state = initialState, action) => {
             
             return {
                 ...state,
-                cartList: state.cartList.filter(item => item.id !== action.payload)
+                cartList: state.cartList.filter(item => item.sys.id !== action.payload)
             }
         
         default:
