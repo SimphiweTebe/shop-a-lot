@@ -21,6 +21,7 @@ function Product(props) {
     React.useEffect(()=>{
         getProduct(productId)
         window.scrollTo(0,0)
+        // eslint-disable-next-line
     },[])
 
     const getProduct = async () => {
@@ -58,8 +59,32 @@ function Product(props) {
                     <div className="product-details">
                         <h3 className="title">{product.fields.title}</h3>
                         <h4 className="price">R{product.fields.price}</h4>
-                        <p className="description">{product.fields.description}</p>
-                        <button className="add-to-cart" onClick={addProduct}>Add to basket</button>
+                        <ul className="description">
+                            <li className="description">
+                                <strong>Description:</strong>
+                                <p>{product.fields.description}</p>
+                            </li>
+                            <li className="size">
+                                <span><strong>Size:</strong></span>
+                                <select name="size" id="size">
+                                    {
+                                        product.fields.size.map((size, index) => (
+                                            <option value={size} key={index}>{size}</option>
+                                        ))
+                                    }
+                                </select>
+                            </li>
+                            <li className="condition">
+                                <span><strong>Condition: </strong>{product.fields.condition}</span>
+                            </li>
+                            <li className="location">
+                                <span><strong>Location: </strong>{product.fields.location}</span>
+                            </li>
+                        </ul>
+                        {
+                            product.fields.outOfStock ? <button className="add-to-cart" disabled>Out of Stock</button> 
+                            : <button className="add-to-cart" onClick={addProduct}>Add to basket</button>
+                        }
                     </div>
                 </section>
             )
@@ -80,7 +105,7 @@ function Product(props) {
         )
 
     }
-
+    
     return (
         <main className="slingle-page">
             { renderProduct() }

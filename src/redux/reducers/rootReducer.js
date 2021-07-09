@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
-import featuredReducer from './featuredReducer';
 import cartReducer from './cartReducer';
 import storeReducer from './storeReducer';
+import filteredReducer from './filteredReducer';
 
 const rootReducer = combineReducers({
     storeList: storeReducer,
-    featuredList: featuredReducer,
+    filteredList: filteredReducer,
     cart: cartReducer
 })
 

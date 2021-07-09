@@ -10,6 +10,7 @@ import Filter from '../components/Filter';
 function Shop() {
     const dispatch = useDispatch();
     const shopFront = useSelector(state => state.storeList.items)
+    const filteredList = useSelector(state => state.filteredList.items)
 
     React.useEffect(()=> {
         dispatch(getShopList())
@@ -31,25 +32,26 @@ function Shop() {
             )
         }
         if(!_.isEmpty(shopFront)){
+
+            const product = !_.isEmpty(filteredList) ? filteredList : shopFront
+
             return (
                 <>
                 <Filter />
                 <section className="store-front">
-                    
                     {
-                        shopFront.map(item => (
+                        product.map(item => (
                             <Link to={`/product/${item.sys.id}`} className="item" key={item.sys.id}>
                                 <div className="item-image" >
                                     <img src={item.fields.productThumbnail.fields.file.url} alt={item.title} />
                                 </div>
                                 <div className="item-info">
-                                    <h4>{item.fields.title}</h4>
+                                    <h4 className="title">{item.fields.title}</h4>
                                     <h4 className="price">R{item.fields.price}</h4>
                                 </div>
                             </Link>
                         ))
                     }
-                    
                 </section>
                 </>
             )
@@ -58,7 +60,9 @@ function Shop() {
 
     return (
         <main className="page">
-            <Banner title="Shop All" />
+            <Banner title="Season Catalogue">
+                <p className="hero-subtext">Hero subtext will go here.</p>
+            </Banner>
             {
                 renderStore()
             }

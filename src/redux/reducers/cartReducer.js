@@ -19,12 +19,24 @@ const cartReducer = (state = initialState, action) => {
             }
 
         case ACTION.REMOVE_FROM_CART:
-
-            console.log(action.payload)
             
             return {
                 ...state,
                 cartList: state.cartList.filter(item => item.sys.id !== action.payload)
+            }
+
+        case ACTION.INCREMENT_CART:
+            
+            return {
+                ...state,
+                cartList: state.cartList.map(item => item.sys.id === action.payload.id ? {...item, qty: item.qty + 1} : item)
+            }
+        
+        case ACTION.DECREMENT_CART:
+            
+            return {
+                ...state,
+                cartList: state.cartList.map(item => item.sys.id === action.payload.id ? {...item, qty: item.qty - 1} : item)
             }
         
         default:
