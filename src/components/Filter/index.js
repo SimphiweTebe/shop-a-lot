@@ -8,14 +8,17 @@ function Filter() {
     const dispatch = useDispatch()
     const getCategory = event => {
         dispatch(filterShopList(event.target.id))
-        console.log(event.target.id)
     }
 
     return (
         <div className="product-filter">
             <form className=" form container">
-                <p>Filter by category:</p>
+                <p>Showing:</p>
                 <div className="filter-group">
+                    <div className="filter-group__item">
+                        <input type="radio" name="category" id="all" onClick={getCategory} />
+                        <label htmlFor="">All</label>
+                    </div>
                     <div className="filter-group__item">
                         <input type="radio" name="category" id="sneakers" onClick={getCategory}/>
                         <label htmlFor="">Sneakers</label>
@@ -23,6 +26,10 @@ function Filter() {
                     <div className="filter-group__item">
                         <input type="radio" name="category" id="jackets" onClick={getCategory} />
                         <label htmlFor="">Jackets</label>
+                    </div>
+                    <div className="filter-group__item">
+                        <input type="radio" name="category" id="jeans" onClick={getCategory} />
+                        <label htmlFor="">Jeans</label>
                     </div>
                     <div className="filter-group__item">
                         <input type="radio" name="category" id="accessories" onClick={getCategory} />
