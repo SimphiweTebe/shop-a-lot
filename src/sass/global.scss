@@ -37,7 +37,7 @@ body{
     margin: 0 auto;
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 
     .item{
         position: inherit;
@@ -59,7 +59,6 @@ body{
             img{
                 object-fit: contain;
                 display: block;
-                height: 18rem;
                 max-width: 24rem;
             }
         }
