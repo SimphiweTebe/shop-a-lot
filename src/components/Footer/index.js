@@ -14,7 +14,7 @@ function index() {
                         <Link to="/shop">Shop</Link>
                     </li>
                     <li className="footer-menu-item">
-                    <Link to="/">About</Link>
+                    <Link to="/">Stores</Link>
                     </li>
                     <li className="footer-menu-item">
                     <Link to="/">Contact</Link>
@@ -53,7 +53,7 @@ function index() {
                 </ul>
             </div>
             <div className="copyright">
-                <p>&copy; {new Date().getFullYear()} The Drip Store. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Supreme Store. All rights reserved.</p>
             </div>
         </footer>
     )

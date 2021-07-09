@@ -8,14 +8,7 @@ function Filter() {
     const dispatch = useDispatch()
     const getCategory = event => {
         const target = event.target
-
-        // if(target.checked){
-        //     return target.unchecked
-        // }
-
         dispatch(filterShopList(target.id))
-        console.log(target.id)
-
     }
 
     return (
@@ -25,23 +18,19 @@ function Filter() {
                 <div className="filter-group">
                     <div className="filter-group__item">
                         <input type="radio" name="category" id="all" onClick={getCategory} defaultChecked/>
-                        <label htmlFor="">All</label>
+                        <label htmlFor="all">All</label>
                     </div>
                     <div className="filter-group__item">
-                        <input type="radio" name="category" id="sneakers" onClick={getCategory}/>
-                        <label htmlFor="">Sneakers</label>
+                        <input type="radio" name="category" id="footwear" onClick={getCategory}/>
+                        <label htmlFor="footwear">Footwear</label>
                     </div>
                     <div className="filter-group__item">
-                        <input type="radio" name="category" id="jackets" onClick={getCategory} />
-                        <label htmlFor="">Jackets</label>
-                    </div>
-                    <div className="filter-group__item">
-                        <input type="radio" name="category" id="jeans" onClick={getCategory} />
-                        <label htmlFor="">Jeans</label>
+                        <input type="radio" name="category" id="clothing" onClick={getCategory} />
+                        <label htmlFor="clothing">Clothing</label>
                     </div>
                     <div className="filter-group__item">
                         <input type="radio" name="category" id="accessories" onClick={getCategory} />
-                        <label htmlFor="">Accessories</label>
+                        <label htmlFor="accessories">Accessories</label>
                     </div>
                 </div>
             </form>

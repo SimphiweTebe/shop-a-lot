@@ -6,6 +6,7 @@ import {createClient} from 'contentful';
 import Hero from '../components/Hero';
 import SignUp from '../components/Signup';
 import LoadSpinner from '../components/LoadSpinner';
+import FeatureCategory from '../components/FeatureCategory';
 
 // CONTENTFUL
 const store = createClient({
@@ -57,7 +58,8 @@ function Home() {
         if(!_.isEmpty(featured)){
             return (
                 <>
-                <h3 className="sub-title">Just landed</h3>
+                <FeatureCategory />
+                <h3 className="sub-title">New Arrivals</h3>
                 <section className="store-front">
                     {
                         featured.items.map(item => (
