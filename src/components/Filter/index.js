@@ -7,7 +7,15 @@ function Filter() {
 
     const dispatch = useDispatch()
     const getCategory = event => {
-        dispatch(filterShopList(event.target.id))
+        const target = event.target
+
+        // if(target.checked){
+        //     return target.unchecked
+        // }
+
+        dispatch(filterShopList(target.id))
+        console.log(target.id)
+
     }
 
     return (
@@ -16,7 +24,7 @@ function Filter() {
                 <p>Showing:</p>
                 <div className="filter-group">
                     <div className="filter-group__item">
-                        <input type="radio" name="category" id="all" onClick={getCategory} />
+                        <input type="radio" name="category" id="all" onClick={getCategory} defaultChecked/>
                         <label htmlFor="">All</label>
                     </div>
                     <div className="filter-group__item">
