@@ -68,7 +68,13 @@ body{
 
             .price{
                 color: darken($grey, 20);
-                margin-top: .5rem;
+                margin-top: .3rem;
+                font-weight: 700;
+            }
+
+            .title{
+                text-transform: uppercase;
+                font-weight: 400;
             }
         }
     }

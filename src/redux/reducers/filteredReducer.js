@@ -6,23 +6,23 @@ const initialState = {
     error: ''
 }
 
-const featuredReducer = (state = initialState, action) => {
+const filteredReducer = (state = initialState, action) => {
 
     switch(action.type){
 
-        case ACTION.FEATURED_LIST_LOADING:
+        case ACTION.FILTERED_LIST_LOADING:
             return {
                 ...state,
                 loading: true,
                 error: ''
             }
-        case ACTION.FEATURED_LIST_FAIL:
+        case ACTION.FILTERED_LIST_FAIL:
             return {
                 ...state,
                 loading: false,
                 error: action.payload
             }
-        case ACTION.FEATURED_LIST_SUCCESS:
+        case ACTION.FILTERED_LIST_SUCCESS:
             return {
                 ...state,
                 loading: false,
@@ -34,4 +34,4 @@ const featuredReducer = (state = initialState, action) => {
     }
 }
 
-export default featuredReducer;
+export default filteredReducer;

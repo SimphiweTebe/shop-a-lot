@@ -11,7 +11,7 @@ function index() {
                         <Link to="/">Home</Link>
                     </li>
                     <li className="footer-menu-item">
-                        <Link to="/">Shop</Link>
+                        <Link to="/shop">Shop</Link>
                     </li>
                     <li className="footer-menu-item">
                     <Link to="/">About</Link>
@@ -22,7 +22,7 @@ function index() {
                 </ul>
                 <ul className="footer-menu">
                     <li className="footer-menu-item">
-                        <Link to="/">My Account</Link>
+                        <Link to="/cart">My Cart</Link>
                     </li>
                     <li className="footer-menu-item">
                         <Link to="/">FAQ</Link>

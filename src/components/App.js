@@ -6,6 +6,7 @@ import Shop from '../pages/Shop'
 import Nav from './Nav'
 import Footer from './Footer'
 import Cart from '../pages/Cart'
+import PageNotFount from '../pages/PageNotFount'
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/shop" component={Shop} />
                 <Route path="/product/:id" component={Product} />
                 <Route path="/cart" component={Cart} />
+                <Route component={PageNotFount} />
             </Switch>
             <Footer />
         </>

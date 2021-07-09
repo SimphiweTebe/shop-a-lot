@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {createClient} from 'contentful'
 import * as ACTION from './TYPES'
 
@@ -31,49 +30,22 @@ export const getShopList = () => {
         }
     }
 }
-
-export const getFeatured = () => {
-
+export const filterShopList = (category) => {
     return async dispatch => {
         try{
             dispatch({
-                type: ACTION.FEATURED_LIST_LOADING
+                type: ACTION.FILTERED_LIST_LOADING
             })
 
-            const res = await store.getEntries({ 
-                content_type: 'dripStore',
-                'fields.featuredProduct': true,
-            })
+            const res = await store.getEntries({'metadata.tags.sys.id[in]': category})
 
             dispatch({
-                type: ACTION.FEATURED_LIST_SUCCESS,
+                type: ACTION.FILTERED_LIST_SUCCESS,
                 payload: res.items
             })
         }catch(err){
             dispatch({
-                type: ACTION.FEATURED_LIST_FAIL,
-                payload: err
-            })
-        }
-    }
-}
-export const getSingleProduct = (id) => {
-
-    return async dispatch => {
-        try{
-            dispatch({
-                type: ACTION.SINGLE_ITEM_LOADING
-            })
-
-            const res = await store.getEntry(id)({ content_type: 'dripStore' })
-
-            dispatch({
-                type: ACTION.SINGLE_ITEM_SUCCESS,
-                payload: res.items
-            })
-        }catch(err){
-            dispatch({
-                type: ACTION.SINGLE_ITEM_FAIL,
+                type: ACTION.FILTERED_LIST_FAIL,
                 payload: err
             })
         }

@@ -14,9 +14,16 @@ export const removeCart = (id) => {
      }
  }
 
- export const adjustCartQTY = (id) => {
+ export const incrementCart = (id, qty) => {
     return {
-         type: ACTION.REMOVE_FROM_CART,
-         payload: id
+         type: ACTION.INCREMENT_CART,
+         payload: {id, qty}
+     }
+ }
+
+ export const decrementCart = (id, qty) => {
+    return {
+         type: ACTION.DECREMENT_CART,
+         payload: {id, qty}
      }
  }
