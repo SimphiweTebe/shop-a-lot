@@ -6,6 +6,7 @@ import { filterShopList } from '../../redux/actions/storeActions'
 function Filter() {
 
     const dispatch = useDispatch()
+
     const getCategory = event => {
         const target = event.target
         dispatch(filterShopList(target.id))
@@ -14,7 +15,6 @@ function Filter() {
     return (
         <div className="product-filter">
             <form className=" form container">
-                <p>Showing:</p>
                 <div className="filter-group">
                     <div className="filter-group__item">
                         <input type="radio" name="category" id="all" onClick={getCategory} defaultChecked/>

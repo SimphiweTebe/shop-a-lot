@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import CartItem from '../components/CartItem'
 import CartSummary from '../components/CartSummary'
-import GridItem from '../components/GridItem'
 
 function Cart() {
 
@@ -26,7 +26,7 @@ function Cart() {
             <div className="cart-grid">
                 {
                     cartState.map(item => (
-                        <GridItem item={item} key={item.sys.id}/>
+                        <CartItem item={item} key={item.sys.id} />
                     ))
                 }
             </div>

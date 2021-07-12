@@ -4,8 +4,8 @@
     width: 90%;
     max-width: 120rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 2rem;
     overflow: hidden;
 
     &-item{
@@ -81,5 +81,10 @@
                 font-size: 1.9rem;
             }
         }
+    }
+
+    @media screen and (min-width: 920px) {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 5rem;
     }
 }
