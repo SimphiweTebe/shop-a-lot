@@ -1,11 +1,12 @@
 import React from 'react';
 import _ from 'underscore';
-import { Link } from 'react-router-dom';
 import {createClient} from 'contentful';
 
 import Hero from '../components/Hero';
 import SignUp from '../components/Signup';
 import LoadSpinner from '../components/LoadSpinner';
+import FeatureCategory from '../components/FeatureCategory';
+import GridItem from '../components/GridItem';
 
 // CONTENTFUL
 const store = createClient({
@@ -57,19 +58,12 @@ function Home() {
         if(!_.isEmpty(featured)){
             return (
                 <>
-                <h3 className="sub-title">Just landed</h3>
+                <FeatureCategory />
+                <h3 className="sub-title">New Arrivals</h3>
                 <section className="store-front">
                     {
                         featured.items.map(item => (
-                            <Link className="item" key={item.sys.id} to={`/product/${item.sys.id}`}>
-                                <div className="item-image" >
-                                    <img src={item.fields.productThumbnail.fields.file.url} alt={item.fields.title} />
-                                </div>
-                                <div className="item-info">
-                                    <h4 className="title">{item.fields.title.length > 25 ? item.fields.title.slice(0,25) + '...' : item.fields.title}</h4>
-                                    <h4 className="price">R{item.fields.price}</h4>
-                                </div>
-                            </Link>
+                            <GridItem key={item.sys.id} item={item}/>
                         ))
                     }
                 </section>

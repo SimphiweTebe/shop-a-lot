@@ -1,41 +1,17 @@
 import React from 'react'
-import { FaWindowClose } from 'react-icons/fa'
-import { useDispatch } from 'react-redux'
-import { decrementCart, incrementCart, removeCart } from '../../redux/actions/cartActions'
+import {Link} from 'react-router-dom'
 
 function GridItem({item}) {
-
-    const dispatch = useDispatch()
-
-    const handleDecrement =  (item) => {
-        if(item.qty < 2 ){
-            dispatch(removeCart(item.sys.id))
-        }
-        dispatch(decrementCart(item.sys.id, item.qty))
-    }
-
     return (
-        <div className="cart-grid__item" key={item.sys.id}>
-        <div className="image">
-            <img src={item.fields.productThumbnail.fields.file.url} alt={item.title} width="120" />
-        </div>
-        <div className="cart-title">
-            <h4 className="title">{item.fields.title}</h4>
-            <div className="cart-event">
-                <div className="cart-event__qty">
-                    <button className="qty" onClick={()=> handleDecrement(item)}>-</button>
-                    <span>{item.qty}</span>
-                    <button className="qty" onClick={()=> dispatch(incrementCart(item.sys.id, item.qty))}>+</button>
-                </div>
-                <div className="cart-event__price">
-                    <span>Price:</span><strong>R{`${item.fields.price * item.qty}`}</strong> 
-                </div>
-                <div className="cart-event__delete" onClick={()=> dispatch(removeCart(item.sys.id))}>
-                    <FaWindowClose />
-                </div>
+        <Link className="item" key={item.sys.id} to={`/product/${item.sys.id}`}>
+            <div className="item-image" >
+                <img src={item.fields.productThumbnail.fields.file.url} alt={item.fields.title} />
             </div>
-        </div>
-    </div>
+            <div className="item-info">
+                <h4 className="title">{item.fields.title.length > 25 ? item.fields.title.slice(0,25) + '...' : item.fields.title}</h4>
+                <h4 className="price">R{item.fields.price}</h4>
+            </div>
+        </Link>
     )
 }
 

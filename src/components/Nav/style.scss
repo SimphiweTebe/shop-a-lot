@@ -6,17 +6,40 @@
     left: 0;
     background-color: rgba(0,0,0,.4);
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     color: #fff;
-    height: 70px;
+    height: 60px;
     z-index: 201;
+
+    .mobile-logo{
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        img{
+            display: block;
+            width: 170px;
+        }
+    }
+
+    .desktop{
+        display: none;
+    }
+
+    .wrapper{
+        position: relative;
+        width: 90%;
+        max-width: 120rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
     
 
     #menu-toggle{
         position: absolute;
-        top: 2.5rem;
+        top: 2rem;
         right: 2rem;
         background: none;
         border: none;
@@ -29,15 +52,14 @@
     &__menu{
         display: flex;
         flex-direction: column;
-        padding: 0 2rem;
-        transform: translate(-100vw, 15rem);
+        transform: translate(-100vw, 28rem);
         transition: all .3s ease-in-out;
         z-index: 200;
 
         a{
             color: #fff;
-            font-size: 1.8rem;
-            margin-bottom: 1.7rem;
+            font-size: 3rem;
+            margin-bottom: 4rem;
         }
     }
     &__menu--open{
@@ -45,14 +67,16 @@
         flex-direction: column;
         padding: 0 2rem;
         height: 60vh;
-        transform: translate(0, 15rem);
+        transform: translate(0, 28rem);
         transition: all .3s ease-in-out;
         z-index: 200;
 
         a{
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 3rem;
             margin-bottom: 4rem;
+            text-transform: uppercase;
+            font-weight: 600;
         }
     }
     &__actions{
@@ -78,7 +102,7 @@
 
             span{
                 position: absolute;
-                top: -1rem;
+                top: -1.3rem;
                 left: -.8rem;
                 background: red;
                 padding: .3rem;
@@ -90,8 +114,21 @@
 
     @media screen and (min-width: 720px){
 
-        flex-direction: row;
-        align-items: center;
+        height: 85px;
+
+        .desktop{
+            display: block;
+            width: 245px;
+        }
+        .mobile{
+            display: none;
+        }
+
+        .wrapper{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
         
         #menu-toggle{
             display: none;
@@ -99,22 +136,24 @@
         &__menu{
             display: flex;
             flex-direction: row;
+            align-items: center;
             justify-content: flex-start;
             width: 70%;
             gap: 2rem;
-            padding: 0 2rem;
             transform: translate(0, 0);
 
             a{
-                font-size: 1.4rem;
-                padding: 1rem 2rem;
+                font-size: 1.2rem;
+                margin-bottom: 0;
                 font-weight: 500;
                 letter-spacing: 1px;
+                padding-right: 1rem;
+                text-transform: uppercase;
             }
         }
         &__actions{
             position: relative;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             bottom: 0;
             left: 0;
@@ -127,11 +166,12 @@
                 span{
                     position: absolute;
                     font-size: 1rem;
-                    top: -1rem;
-                    left: -1.5rem;
+                    top: -.8rem;
+                    left: -1.2rem;
                     background-color: red;
-                    padding: .2rem .6rem;
+                    padding: .5rem .9rem;
                     border-radius: 30px;
+                    transform: scale(.6);
                 }
             }
         }

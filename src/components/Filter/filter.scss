@@ -1,31 +1,69 @@
 .product-filter{
     position: relative;
     text-align: center;
-    text-align: center;
+    width: 100%;
 
     form{
         display: flex;
         align-items: center;
         gap: 4rem;
-        padding: 5rem 0;
-        // margin-bottom: 2rem;
+        flex-direction: column;
 
-        p{
+        label{
             font-weight: 500;
+            text-transform: uppercase;
         }
+
+        input{
+            visibility: hidden;
+        }
+        
     }
 
     .filter-group{
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 3rem;
+        gap: 2rem;
 
         &__item{
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: .5rem;
+            gap: 1rem;
+            cursor: pointer;
+
+            &:hover{
+                color: red;
+            }
         }
     }
+
+    @media screen and(min-width: 720px) {
+
+        width: 10rem;
+
+        .filter-group{
+            justify-content: flex-start;
+
+            &__item{
+                width: 100%;
+                justify-content: flex-start;
+                cursor: pointer;
+            }
+        }
+
+        form{
+            flex-direction: row;
+
+            label{
+                transform: translate(-25px,0);
+            }
+        }
+    }
+}
+.--active{
+    color: red;
+    font-weight: 700;
 }
