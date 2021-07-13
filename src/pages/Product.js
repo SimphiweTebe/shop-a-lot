@@ -65,7 +65,7 @@ function Product(props) {
                                 <p>{product.fields.description}</p>
                             </li>
                             <li className="size">
-                                <span><strong>Size:</strong></span>
+                                <p>Size:</p>
                                 <select name="size" id="size">
                                     {
                                         product.fields.size.map((size, index) => (
@@ -73,12 +73,6 @@ function Product(props) {
                                         ))
                                     }
                                 </select>
-                            </li>
-                            <li className="condition">
-                                <span><strong>Condition: </strong>{product.fields.condition}</span>
-                            </li>
-                            <li className="location">
-                                <span><strong>Location: </strong>{product.fields.location}</span>
                             </li>
                         </ul>
                         {
