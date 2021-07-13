@@ -51,9 +51,6 @@ function Shop() {
 
     return (
         <main className="page">
-            {/* <Banner title="Season Catalogue">
-                <p className="hero-subtext">Hero subtext will go here.</p>
-            </Banner> */}
             <div className="shop-page">
                 <Filter />
                 {
