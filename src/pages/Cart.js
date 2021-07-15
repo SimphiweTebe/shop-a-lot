@@ -23,14 +23,16 @@ function Cart() {
     return (
         <section className="cart-page">
             <h1 className="cart-page__title">Shopping Cart</h1>
-            <div className="cart-grid">
-                {
-                    cartState.map(item => (
-                        <CartItem item={item} key={item.sys.id} />
-                    ))
-                }
+            <div className="cart-page__wrapper">
+                <div className="cart-grid">
+                    {
+                        cartState.map(item => (
+                            <CartItem item={item} key={item.sys.id} />
+                        ))
+                    }
+                </div>
+                <CartSummary count={count} total={total}/>
             </div>
-            <CartSummary count={count} total={total}/>
         </section>
     )
 }

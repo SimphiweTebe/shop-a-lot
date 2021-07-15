@@ -77,7 +77,7 @@ function Product(props) {
                         </ul>
                         {
                             product.fields.outOfStock ? <button className="add-to-cart" disabled>Out of Stock</button> 
-                            : <button className="add-to-cart" onClick={addProduct}>Add to basket</button>
+                            : <button className="add-to-cart" onClick={addProduct}>Add to cart</button>
                         }
                     </div>
                 </section>

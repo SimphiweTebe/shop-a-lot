@@ -97,6 +97,10 @@ body{
             p{
                 font-weight: 500;
             }
+
+            select{
+                border: none;
+            }
         }
         .add-to-cart{
             display: inline-block;
@@ -241,7 +245,8 @@ body{
     min-height: 70vh;
 
     &__title{
-        font-size: 2.5rem;
+        font-size: 2rem;
+        text-transform: uppercase;
     }
 }
 .shop-page{

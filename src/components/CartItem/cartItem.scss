@@ -50,16 +50,15 @@
     position: relative;
     width: 100%;
     max-width: 80rem;
-    margin-top: 4rem;
     
     &__item{
         position: relative;
         display: flex;
+        align-items: center;
         gap: 3rem;
-        margin-top: 2rem;
-        border: 1px solid lighten(#585858, 20);
-        padding: 2.5rem 2rem;
-        min-height: 20rem;
+        border: 1px solid lighten(#585858, 50);
+        padding: 1rem 0;
+        margin-bottom: 1rem;
 
         .image{
             position: relative;
@@ -75,13 +74,14 @@
 
             .title{
                 text-transform: uppercase;
-                margin-bottom: 4rem;
+                margin-bottom: 2rem;
             }
         }
         .cart-event{
             display: flex;
             width: 100%;
-            justify-content: space-between;
+            // justify-content: space-between;
+            gap: 3rem;
             align-items: center;
             
 
@@ -89,24 +89,31 @@
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                
+                gap: 1rem;
+                position: relative;
+
+                strong{
+                    padding-right: 10px;
+                    font-weight: 400;
+                }
 
                 span{
-                    padding: 0 1.2rem;
-                    border: 1px solid lighten(#585858, 20);
-                    height: 3.5rem;
+                    padding: 0 1rem;
+                    border: 1px solid #8b8b8b;
+                    height: 2.5rem;
                     display: flex;
                     align-items: center;
+                    font-size: 1.2rem;
                 }
 
                 .qty{
                     font-size: 2rem;
                     cursor: pointer;
-                    background: black;
-                    border: 1px solid black;
-                    color: #fff;
-                    height: 3.5rem;
-                    width: 3.5rem;
+                    background: #fff;
+                    border: none;
+                    height: 2.5rem;
+                    width: 2.5rem;
+
                 }
             }
 
@@ -115,14 +122,23 @@
                 justify-content: space-between;
                 align-items: center;
                 min-width: 90px;
+
+                strong{
+                    padding-right: 10px;
+                    font-weight: 400;
+                }
             }
 
             &__delete{
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 cursor: pointer;
+                position: absolute;
+                top: -2rem;
+                right: -.5rem;
+                opacity: .4;
             }
         }
         .cart-remove{
