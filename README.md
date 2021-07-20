@@ -1,18 +1,17 @@
-# Drip Ecommerce
-
 ## Project Techstack:
 
-- Frontend UI: React JS and SASS
+- Frontend UI: React and SASS
 - State management: Redux
-- User Signup: Mailchimp API 
-- Headless CMS: Contentful CMS
+- Newsletter Signup: Mailchimp API 
+- JAMStack Headless CMS: Contentful CMS
 
 ## Features
 
 - Mobile-first Responsive UI
 - User Newsletter Signup
-- Functional shopping cart
-- Carousel
+- Dynamic Shopping Cart
+- Custom Carousel
 - Product filtering 
 - Checkout integration with PayPal ** pending feature **
+- Dynamic Store List ** pending feature **
 
