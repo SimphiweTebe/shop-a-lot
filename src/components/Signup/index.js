@@ -1,13 +1,13 @@
 import React from 'react'
 import './signup.scss'
+import MailchimpSubscribe from "react-mailchimp-subscribe"
 
 function SignUp() {
     return (
         <div className="signup">
             <h4>Signup to our newsletter</h4>
             <div className="signup-container">
-                <input type="email" />
-                <input type="submit" value="Subscribe" />
+                <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL} />
             </div>
         </div>
     )
