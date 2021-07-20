@@ -3,7 +3,7 @@
 - Frontend UI: React and SASS
 - State management: Redux
 - Newsletter Signup: Mailchimp API 
-- JAMStack Headless CMS: Contentful CMS
+- Headless CMS: Contentful CMS
 
 ## Features
 
@@ -14,4 +14,5 @@
 - Product filtering 
 - Checkout integration with PayPal ** pending feature **
 - Dynamic Store List ** pending feature **
+- Contact Form ** pending feature **
 
