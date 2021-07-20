@@ -2,9 +2,10 @@
 
 ## Project Techstack:
 
-- Frontend UI: React JS, SASS and GSAP
-- State management: Redux + hooks
-- APIs: Mailchimp, Contentful CMS
+- Frontend UI: React JS and SASS
+- State management: Redux
+- User Signup: Mailchimp API 
+- Headless CMS: Contentful CMS
 
 ## Features
 
@@ -12,6 +13,6 @@
 - User Newsletter Signup
 - Functional shopping cart
 - Carousel
-- Product filtering *coming soon*
-- Checkout integration *coming soon*
+- Product filtering 
+- Checkout integration with PayPal ** pending feature **
 
