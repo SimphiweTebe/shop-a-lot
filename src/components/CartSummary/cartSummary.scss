@@ -1,27 +1,74 @@
+.cart-page__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 4rem;
+    gap: 5rem;
+}
+
 .cart-summary{
-    position: fixed;
-    top: 9rem;
-    right: 1rem;
-    border: 2px solid black;
-    width: 25rem;
-    padding: 3rem 1.5rem;
+    color: #fff;
+    width: 30%;
+    min-width: 300px;
+    padding: 4rem 3rem;
+    background: #303030;
 
     &__header{
         position: relative;
-        margin-bottom: 2rem;
-        font-weight: 500;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    &__sub{
+        font-weight: 400;
+        font-size: 1.5rem;
     }
     &__details{
         position: relative;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
+
+        li{
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: .3rem;
+
+            strong{
+                font-size: 1.2rem;
+                font-weight: 400;
+                padding-right: 10px;
+            }
+        }
     }
+
+    &__card{
+        display: flex;
+        // justify-content: space-between;
+        gap: 3rem;
+        width: 100%;
+        margin: 3rem 0;
+
+        li{
+            width: 49%;
+        }
+        button{
+            width: 100%;
+            padding: .7rem 1.3rem;
+        }
+    }
+
     &__button{
         position: relative;
         width: 100%;
         padding: 1rem;
         border: none;
-        background: black;
+        background: #ED1C24;
         color: #fff;
         cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
     }
 }

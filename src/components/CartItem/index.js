@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaWindowClose } from 'react-icons/fa'
+import { FaRegTimesCircle } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
 import { decrementCart, incrementCart, removeCart } from '../../redux/actions/cartActions'
 import './cartItem.scss'
@@ -24,15 +24,16 @@ function CartItem({item}) {
             <h4 className="title">{item.fields.title}</h4>
             <div className="cart-event">
                 <div className="cart-event__qty">
+                    <strong>QTY: </strong>
                     <button className="qty" onClick={()=> handleDecrement(item)}>-</button>
                     <span>{item.qty}</span>
                     <button className="qty" onClick={()=> dispatch(incrementCart(item.sys.id, item.qty))}>+</button>
                 </div>
                 <div className="cart-event__price">
-                    <span>Price:</span><strong>R{`${item.fields.price * item.qty}`}</strong> 
+                    <strong>Total Price:</strong><span>R{`${item.fields.price * item.qty}`}</span> 
                 </div>
                 <div className="cart-event__delete" onClick={()=> dispatch(removeCart(item.sys.id))}>
-                    <FaWindowClose />
+                    <FaRegTimesCircle />
                 </div>
             </div>
         </div>

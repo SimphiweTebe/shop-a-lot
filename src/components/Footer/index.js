@@ -53,7 +53,7 @@ function index() {
                 </ul>
             </div>
             <div className="copyright">
-                <p>&copy; {new Date().getFullYear()} Supreme Store. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Simpiwe Tebe</p>
             </div>
         </footer>
     )

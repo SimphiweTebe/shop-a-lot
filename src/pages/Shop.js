@@ -20,16 +20,16 @@ function Shop() {
     },[dispatch])
 
     const renderStore = ()=> {
-        if(shopFront.loading){
+        if(shopFront.loading || filteredList.loading){
             return (
                 <LoadSpinner />
             )
             
         }
-        if(shopFront.error){
+        if(shopFront.error || filteredList.error){
             return (
                 <div className="error">
-                    <h3>{shopFront.error}</h3>
+                    <h3>{shopFront.error || filteredList.error}</h3>
                 </div>
             )
         }
