@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaRegTimesCircle } from 'react-icons/fa'
+import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { decrementCart, incrementCart, removeCart } from '../../redux/actions/cartActions'
 import './cartItem.scss'
@@ -30,10 +30,10 @@ function CartItem({item}) {
                     <button className="qty" onClick={()=> dispatch(incrementCart(item.sys.id, item.qty))}>+</button>
                 </div>
                 <div className="cart-event__price">
-                    <strong>Total Price:</strong><span>R{`${item.fields.price * item.qty}`}</span> 
+                    <strong>Price:</strong><span>R{`${item.fields.price * item.qty}`}</span> 
                 </div>
                 <div className="cart-event__delete" onClick={()=> dispatch(removeCart(item.sys.id))}>
-                    <FaRegTimesCircle />
+                    <AiOutlineClose />
                 </div>
             </div>
         </div>
