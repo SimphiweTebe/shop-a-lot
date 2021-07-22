@@ -30,7 +30,7 @@ function CartItem({item}) {
                     <button className="qty" onClick={()=> dispatch(incrementCart(item.sys.id, item.qty))}>+</button>
                 </div>
                 <div className="cart-event__price">
-                    <strong>Price:</strong><span>R{`${item.fields.price * item.qty}`}</span> 
+                    <strong>PRICE:</strong><span>R{`${item.fields.price * item.qty}`}</span> 
                 </div>
                 <div className="cart-event__delete" onClick={()=> dispatch(removeCart(item.sys.id))}>
                     <AiOutlineClose />
