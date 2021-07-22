@@ -78,6 +78,19 @@
             text-transform: uppercase;
             font-weight: 600;
         }
+
+        .mobile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span{
+                background-color: red;
+                padding: 2px 10px;
+                font-size: 1.8rem;
+                border-radius: 30px;
+            }
+        }
     }
     &__actions{
         display: flex;
