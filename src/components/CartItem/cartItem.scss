@@ -201,11 +201,12 @@
     }
     @media screen and(min-width: 1000px){
 
-        width: 65%;
+        width: 64%;
         max-width: 680px;
 
         &__item{
             flex-direction: row;
+            min-height: 190px;
             
 
             .cart-event{
@@ -214,7 +215,7 @@
                 align-items: center;
 
                 &__delete{
-                    top: -4.5rem;
+                    top: -5.5rem;
                 }
             }
             .image{
