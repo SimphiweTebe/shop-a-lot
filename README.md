@@ -1,17 +1,18 @@
 ## Project Techstack:
 
-- Frontend UI: React and SASS
-- State management: Redux
-- Newsletter Signup: Mailchimp API 
-- Headless CMS: Contentful CMS
+- UI: React and SASS
+- State management: Redux 
+- CMS: Contentful CMS
+- Services: Mailchimp, Firebase Auth
 
 ## Features
 
-- Mobile-first Responsive UI
-- User Newsletter Signup
-- Dynamic Shopping Cart
-- Custom Carousel
-- Product filtering 
+- Mobile-first UI
+- Products listing
+- Stores list page
+- Shopping Cart
+- Newsletter Signup
+- User Authentication ** pending feature **
 - Checkout integration with PayPal ** pending feature **
 - Dynamic Store List ** pending feature **
 - Contact Form ** pending feature **

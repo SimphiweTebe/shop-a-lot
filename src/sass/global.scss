@@ -50,6 +50,7 @@ body{
     &-image{
         position: relative;
         width: 100%;
+        margin-bottom: 3rem;
 
         img{
             display: block;
@@ -80,6 +81,7 @@ body{
             strong{
                 padding-bottom: 1.5rem;
                 display: inline-block;
+                text-transform: uppercase;
             }
         }
         .category{
@@ -90,16 +92,19 @@ body{
         .size{
             display: flex;
             width: 100%;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: center;
             height: 2rem;
+            text-transform: uppercase;
 
             p{
                 font-weight: 500;
+                font-size: 1.4rem;
             }
 
             select{
                 border: none;
+                text-transform: uppercase;
             }
         }
         .add-to-cart{
@@ -124,6 +129,11 @@ body{
         }
         &-details{
             width: 50%;
+
+            .title{
+                font-size: 3.5rem;
+                line-height: 1.1;
+            }
         }
     }
 

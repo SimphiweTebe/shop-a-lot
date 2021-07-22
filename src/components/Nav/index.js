@@ -39,7 +39,7 @@ function Nav() {
                         <img src={supreme} alt="Supreme logo" className="desktop" />
                     </Link>
                     <Link to="/shop" onClick={handleNav}>Shop</Link>
-                    <Link to="/cart" onClick={handleNav} className="mobile">My Cart</Link>
+                    <Link to="/cart" onClick={handleNav} className="mobile">Cart</Link>
                     <Link to="/" onClick={handleNav}>Stores</Link>
                     <Link to="/" onClick={handleNav}>Contact</Link>
                 </div>

@@ -7,9 +7,9 @@ function CartSummary({count, total}) {
             <h4 className="cart-summary__header">SHOPPING SUMMARY</h4>
             <ul className="cart-summary__details">
                 {/* <li><strong>Items: {count}</strong></li> */}
-                <li><strong>Sub total: </strong>R{total}</li>
+                <li><strong>Sub Total: </strong>R{total}</li>
                 <li><strong>Delivery: </strong>R0</li>
-                <li><strong>Total: </strong>R{total}</li>
+                <li><strong>Total Price: </strong>R{total}</li>
             </ul>
             {/* <h4 className="cart-summary__sub">Payment Method:</h4>
             <ul className="cart-summary__card">
